@@ -2,7 +2,7 @@
 <resources>
     <attr name="rightPadding" format="dimension" />
     <attr name="drawerType" format="boolean" />
-    <declare-styleable name="SlidingMenu">
+    <declare-styleable name="SlidingMenuScrollView">
         <attr name="rightPadding" />
         <attr name="drawerType" />
     </declare-styleable>

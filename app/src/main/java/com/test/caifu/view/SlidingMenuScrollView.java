@@ -17,7 +17,7 @@ import com.test.caifu.R;
  * Created by zhengcf on 2017/12/13.
  */
 
-public class SlidingMenu extends HorizontalScrollView {
+public class SlidingMenuScrollView extends HorizontalScrollView  implements  Sliding{
     //菜单布局
     private ViewGroup mMenu;
     //内容布局
@@ -38,7 +38,7 @@ public class SlidingMenu extends HorizontalScrollView {
      *
      * @param context
      */
-    public SlidingMenu(Context context) {
+    public SlidingMenuScrollView(Context context) {
         this(context, null);
     }
 
@@ -48,7 +48,7 @@ public class SlidingMenu extends HorizontalScrollView {
      * @param context
      * @param attrs
      */
-    public SlidingMenu(Context context, AttributeSet attrs) {
+    public SlidingMenuScrollView(Context context, AttributeSet attrs) {
         //调用三个参数的构造方法
         this(context, attrs, 0);
 
@@ -61,12 +61,12 @@ public class SlidingMenu extends HorizontalScrollView {
      * @param attrs
      * @param defStyleAttr
      */
-    public SlidingMenu(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SlidingMenuScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         //获取我们自定义的属性
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SlidingMenu);
-        isDrawerType = typedArray.getBoolean(R.styleable.SlidingMenu_drawerType, false);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SlidingMenuScrollView);
+        isDrawerType = typedArray.getBoolean(R.styleable.SlidingMenuScrollView_drawerType, false);
         typedArray.recycle();
 
         //通过以下步骤拿到屏幕宽度的像素值
@@ -92,7 +92,6 @@ public class SlidingMenu extends HorizontalScrollView {
             mMenu = (ViewGroup) mWapper.getChildAt(0);
             mContent = (ViewGroup) mWapper.getChildAt(1);
             mMenuWidth = mMenu.getMeasuredWidth();
-            Log.d("test", "onMeasure mMenuWidth:" + mMenuWidth);
             mContent.getLayoutParams().width = mScreenWidth;
         }
     }

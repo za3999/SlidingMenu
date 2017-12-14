@@ -5,19 +5,19 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.test.caifu.R;
-import com.test.caifu.view.SlidingMenu;
+import com.test.caifu.view.Sliding;
 
 /**
  * Created by zhengcf on 2017/12/13.
  */
 
 public class MainActivity extends BaseActivity {
-    SlidingMenu menu;
+    Sliding menu;
     View contentView;
 
     @Override
     public int getLayoutRes() {
-        return R.layout.activity_main;
+        return R.layout.activity_sliding_group;
     }
 
     @Override
